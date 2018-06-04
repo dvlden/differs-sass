@@ -1,0 +1,28 @@
+{
+  "name": "differs",
+  "description": "Differs is not just another CSS framework, it's different. It focuses on 3 important words with \"ity\" suffixes: simplicity, readability, flexibility.",
+  "version": "0.0.1",
+  "main": "src/differs.scss",
+  "license": "MIT",
+  "homepage": "hhttps://github.com/dvlden/differs#readme",
+  "bugs": "hhttps://github.com/dvlden/differs/issues",
+  "repository": {
+    "type": "git",
+    "url": "hhttps://github.com/dvlden/differs.git"
+  },
+  "author": {
+    "name": "Nenad Novaković",
+    "email": "n.dvlden@gmail.com",
+    "url": "https://github.com/dvlden"
+  },
+  "keywords": [
+    "differs",
+    "framework",
+    "css",
+    "sass",
+    "scss"
+  ],
+  "browserslist": [
+    "last 1 major version"
+  ]
+}
