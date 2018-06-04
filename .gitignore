@@ -1,2 +1,8 @@
-.sass-cache/
-*.css.map
+# OS specific
+._*
+.DS_Store
+Thumbs.db
+
+# Directories
+node_modules
+dist
