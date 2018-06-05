@@ -5,11 +5,11 @@
   "private": true,
   "main": "src/differs.scss",
   "license": "MIT",
-  "homepage": "hhttps://github.com/dvlden/differs#readme",
-  "bugs": "hhttps://github.com/dvlden/differs/issues",
+  "homepage": "https://github.com/dvlden/differs#readme",
+  "bugs": "https://github.com/dvlden/differs/issues",
   "repository": {
     "type": "git",
-    "url": "hhttps://github.com/dvlden/differs.git"
+    "url": "https://github.com/dvlden/differs.git"
   },
   "author": {
     "name": "Nenad Novaković",
