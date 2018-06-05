@@ -2,6 +2,7 @@
   "name": "differs",
   "description": "Differs is not just another CSS framework, it's different. It focuses on 3 important words with \"ity\" suffixes: simplicity, readability, flexibility.",
   "version": "0.0.1",
+  "private": true,
   "main": "src/differs.scss",
   "license": "MIT",
   "homepage": "hhttps://github.com/dvlden/differs#readme",
