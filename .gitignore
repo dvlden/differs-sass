@@ -3,6 +3,9 @@
 .DS_Store
 Thumbs.db
 
+# IDE/Code Editor
+.idea
+
 # Directories
 node_modules
 dist
