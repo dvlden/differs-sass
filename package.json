@@ -25,11 +25,12 @@
   ],
   "scripts": {
     "clean": "rimraf dist",
+    "lint": "stylelint --sytnax=scss \"src/**/**.scss\"",
     "compile": "node-sass --output-style=expanded --source-map=true src/differs.scss dist/differs.css",
     "prefix": "postcss dist/differs.css --use=autoprefixer --map=false --output=dist/differs.css",
     "minify": "cleancss --level=1 --source-map --source-map-inline-sources --output dist/differs.min.css dist/differs.css",
     "dev": "yarn run compile --watch",
-    "build": "yarn run clean && yarn run compile && yarn run prefix && yarn run minify"
+    "build": "yarn run clean && yarn run lint && yarn run compile && yarn run prefix && yarn run minify"
   },
   "browserslist": [
     "last 1 major version",
@@ -39,6 +40,9 @@
     "autoprefixer": "^8.6.0",
     "clean-css-cli": "^4.1.11",
     "node-sass": "^4.9.0",
-    "postcss-cli": "^5.0.0"
+    "postcss-cli": "^5.0.0",
+    "stylelint": "^9.2.1",
+    "stylelint-order": "^0.8.1",
+    "stylelint-scss": "^3.1.0"
   }
 }
