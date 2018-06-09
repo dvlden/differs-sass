@@ -1,0 +1,37 @@
+// ---------------------------------------------------------
+// str-replace
+// Replace occurence of a string
+//
+// Required arguments:
+// `$string` String
+// `$search` String
+// `$replace` String *predefined*
+//
+// Example of use:
+// str-replace('This is just an example', 'just', 'not')
+//
+// @return String
+// ---------------------------------------------------------
+@function str-replace ($string, $search, $replace: '') {
+  @if type-of($string) != 'string' {
+    @error 'The argument $string: `#{$string}` is of incorrect type: `#{type-of($string)}`. Type of `String` is required!';
+  }
+  @else if type-of($search) != 'string' {
+    @error 'The argument $search: `#{$search}` is of incorrect type: `#{type-of($search)}`. Type of `String` is required!';
+  }
+  @else if type-of($replace) != 'string' {
+    @error 'The argument $search: `#{$search}` is of incorrect type: `#{type-of($search)}`. Type of `String` is required!';
+  }
+
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search, $replace
+      );
+  }
+
+  @return $string;
+}

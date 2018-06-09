@@ -1,0 +1,28 @@
+// ---------------------------------------------------------
+// convert-unit
+// Convert number's pixel unit to em/rem
+//
+// Required arguments:
+// `$number` Number
+// `$unit` String
+// `$base` Number *predefined*
+//
+// Example of use:
+// convert-unit(15px, 'rem')
+// convert-unit(15px, 'em')
+//
+// @return List
+// ---------------------------------------------------------
+@function convert-unit ($number, $unit, $base: $dfr--base-fontSize) {
+  @if type-of($number) != 'number' {
+    @error 'The argument $number: `#{$number}` is of incorrect type: `#{type-of($number)}`. Type of `Number` is required!';
+  }
+  @else if unit($number) != 'px' {
+    @error 'The argument $number: `#{$number}` has incorrect unit: `#{unit($number)}`. Unit of `px` is required!';
+  }
+  @else if $unit != 'em' and $unit != 'rem' {
+    @error 'The argument $unit: `#{$unit}` has incorrect value: `#{$unit}`. Value of `em` or `rem` is required!';
+  }
+
+  @return strip-unit($number) / strip-unit($base) + unquote($unit);
+}

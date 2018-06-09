@@ -1,0 +1,22 @@
+// ---------------------------------------------------------
+// strip-unit
+// Make a number unitless
+//
+// Required arguments:
+// `$number` String
+//
+// Example of use:
+// strip-unit(15px)
+//
+// @return Number
+// ---------------------------------------------------------
+@function strip-unit ($number) {
+  @if type-of($number) != 'number' {
+    @error 'The argument $number: `#{$number}` is of incorrect type: `#{type-of($number)}`. Type of `Number` is required!';
+  }
+  @else if unitless($number) {
+    @warn 'The argument $number: `#{$number}` has no unit. Unit is required!';
+  }
+
+  @return $number / ($number * 0 + 1);
+}
