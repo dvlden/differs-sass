@@ -1,7 +1,7 @@
 {
   "name": "differs",
   "description": "Differs is not just another CSS framework, it's different. It focuses on 3 important words with \"ity\" suffixes: simplicity, readability, flexibility.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "main": "src/differs.scss",
   "license": "MIT",
@@ -44,5 +44,8 @@
     "stylelint": "^9.2.1",
     "stylelint-order": "^0.8.1",
     "stylelint-scss": "^3.1.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0"
   }
 }
