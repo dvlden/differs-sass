@@ -1,0 +1,11 @@
+// this is used within framework only
+// it is not suggested that you modify those
+// so they won't be having !default flag
+$dfr-iterators: ();
+
+@import 'iterators/border-radius';
+@import 'iterators/breakpoints';
+@import 'iterators/colors';
+@import 'iterators/container';
+@import 'iterators/headings';
+@import 'iterators/spacing';

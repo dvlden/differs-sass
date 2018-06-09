@@ -1,0 +1,13 @@
+$dfr-iterators: map-merge(
+  (
+    'headings': (
+      $dfr-h1-fontSize,
+      $dfr-h2-fontSize,
+      $dfr-h3-fontSize,
+      $dfr-h4-fontSize,
+      $dfr-h5-fontSize,
+      $dfr-h6-fontSize
+    )
+  ),
+  $dfr-iterators
+);
