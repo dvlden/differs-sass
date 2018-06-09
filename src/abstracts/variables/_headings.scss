@@ -1,0 +1,10 @@
+$dfr-h1-fontSize:                       ($dfr--base-fontSize + 26) !default;
+$dfr-h2-fontSize:                       ($dfr--base-fontSize + 20) !default;
+$dfr-h3-fontSize:                       ($dfr--base-fontSize + 14) !default;
+$dfr-h4-fontSize:                       ($dfr--base-fontSize + 8) !default;
+$dfr-h5-fontSize:                       ($dfr--base-fontSize + 4) !default;
+$dfr-h6-fontSize:                       ($dfr--base-fontSize + 2) !default;
+
+$dfr-heading-fontWeight:                500 !default;
+$dfr-heading-marginBottom:              $dfr--y-spacing !default;
+$dfr-heading-lineHeight:                ($dfr--base-lineHeight / 1.2) !default;

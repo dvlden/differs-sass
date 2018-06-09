@@ -1,0 +1,62 @@
+/// Colors
+$dfr--base-color-dark:                  #000 !default;
+$dfr--base-color-light:                 #fff !default;
+
+$dfr-color-dark:                        $dfr--base-color-dark !default;
+$dfr-color-almostDark:                  lighten($dfr--base-color-dark, 15%) !default;
+$dfr-color-medium:                      mix($dfr--base-color-dark, $dfr--base-color-light, 51%) !default;
+$dfr-color-almostLight:                 darken($dfr--base-color-light, 15%) !default;
+$dfr-color-light:                       $dfr--base-color-light !default;
+
+
+/// Font
+$dfr--base-lineHeight:                  1.5 !default;
+$dfr--base-fontSize:                    16px !default;
+$dfr--root-fontSize-small:              ($dfr--base-fontSize - 2) !default;
+$dfr--root-fontSize-large:              $dfr--base-fontSize !default;
+
+$dfr-fontSize-extraSmall:               $dfr--base-fontSize - 4 !default;
+$dfr-fontSize-small:                    $dfr--base-fontSize - 2 !default;
+$dfr-fontSize-large:                    $dfr--base-fontSize + 2 !default;
+$dfr-fontSize-extraLarge:               $dfr--base-fontSize + 4 !default;
+$dfr-fontWeight:                        400 !default;
+// stylelint-disable value-keyword-case
+$dfr-fontFamily:                        -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif !default;
+$dfr-fontFamily-mono:                   Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
+// stylelint-enable value-keyword-case
+$dfr-font-path:                         '../fonts';
+
+
+/// Grid
+$dfr-grid-columns:                      12 !default;
+$dfr-grid-gutter:                       15px !default;
+
+
+/// Border
+$dfr-borderWidth:                       1px !default;
+$dfr-borderStyle:                       solid !default;
+$dfr-borderColor:                       $dfr-color-dark !default;
+
+
+/// Border Radius
+$dfr--base-borderRadius:                4px !default;
+$dfr-borderRadius-extraSmall:           $dfr--base-borderRadius / 2 !default;
+$dfr-borderRadius-small:                $dfr--base-borderRadius / 1.25 !default;
+$dfr-borderRadius-large:                $dfr--base-borderRadius * 1.25 !default;
+$dfr-borderRadius-extraLarge:           $dfr--base-borderRadius * 2 !default;
+$dfr-borderRadius-full:                 50% !default;
+
+
+/// Spacing
+$dfr--base-spacing:                     15px !default;
+$dfr--x-spacing:                        $dfr--base-spacing !default;
+$dfr--y-spacing:                        $dfr--base-spacing !default;
+
+$dfr--x-spacing-extraSmall:             $dfr--x-spacing / 2.5 !default;
+$dfr--y-spacing-extraSmall:             $dfr--y-spacing / 2.5 !default;
+$dfr--x-spacing-small:                  $dfr--x-spacing / 1.5 !default;
+$dfr--y-spacing-small:                  $dfr--y-spacing / 1.5 !default;
+$dfr--x-spacing-large:                  $dfr--x-spacing * 2 !default;
+$dfr--y-spacing-large:                  $dfr--y-spacing * 2 !default;
+$dfr--x-spacing-extraLarge:             $dfr--x-spacing * 4 !default;
+$dfr--y-spacing-extraLarge:             $dfr--y-spacing * 4 !default;
