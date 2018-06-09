@@ -1,0 +1,57 @@
+// ---------------------------------------------------------
+// border-radius
+// Set predefined or a custom radius on an element
+//
+// Required arguments:
+// `$value` String/Number
+//
+// Optional arguments:
+// `$properties` List
+//
+// Allowed `$value`(s) as namespaces can be found at:
+// "abstracts/iterators/border-radius.scss" @ $dfr-borderRadius
+//
+// Examples of use:
+// @include border-radius(5px)
+// @include border-radius('xs')
+// @include border-radius('m', ('top'))
+// @include border-radius('xl', ('top-left', 'bottom-right'))
+//
+// *Attention*
+// Improper use of this mixin can output duplicate radius
+// For example, if you use $properties as ('top', 'top-left')
+// Since 'top' means top-right and top-left, it would output:
+// top-right, top-left, top-left
+// ---------------------------------------------------------
+@mixin border-radius ($value, $properties: ()) {
+  @if type-of($value) == 'string' {
+    $value: get('borderRadius.#{$value}');
+  }
+
+  @if type-of($value) == 'number' and unit($value) != '%' {
+    $value: convert-unit($value, 'rem');
+  }
+
+  $_properties: ();
+
+  @each $property in $properties {
+    @if $property == 'top' or $property == 'bottom' {
+      $_properties: join($_properties, ('#{$property}-right', '#{$property}-left'));
+    }
+    @else if $property == 'left' or $property == 'right' {
+      $_properties: join($_properties, ('top-#{$property}', 'bottom-#{$property}'));
+    }
+    @else {
+      $_properties: join($_properties, $property);
+    }
+  }
+
+  @if length($_properties) > 0 {
+    @each $_property in $_properties {
+      border-#{$_property}-radius: $value;
+    }
+  }
+  @else {
+    border-radius: $value;
+  }
+}

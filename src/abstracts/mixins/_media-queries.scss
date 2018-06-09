@@ -1,0 +1,37 @@
+// ---------------------------------------------------------
+// media-min
+// Simplifies the use of `@media` queries
+//
+// Required arguments:
+// `$namespace` String
+//
+// Allowed `$namespace`(s) can be found at:
+// "abstracts/variables/breakpoints.scss" @ $dfr-breakpoints
+//
+// Example of use:
+// @include media-min('xs') { ... }
+// ---------------------------------------------------------
+@mixin media-min ($namespace) {
+  @media (min-width: convert-unit(get('breakpoints.#{$namespace}'), 'em')) {
+    @content;
+  }
+}
+
+// ---------------------------------------------------------
+// media-max
+// Simplifies the use of `@media` queries
+//
+// Required arguments:
+// `$namespace` String
+//
+// Allowed `$namespace`(s) can be found at:
+// "abstracts/variables/breakpoints.scss" @ $dfr-breakpoints
+//
+// Example of use:
+// @include media-max('xs') { ... }
+// ---------------------------------------------------------
+@mixin media-max ($namespace) {
+  @media (max-width: convert-unit(get('breakpoints.#{$namespace}') - 1, 'em')) {
+    @content;
+  }
+}

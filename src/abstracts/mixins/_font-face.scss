@@ -1,0 +1,42 @@
+// ---------------------------------------------------------
+// font-face
+// Improved and simplified use of `@font-face`(s)
+//
+// Required arguments:
+// `$family` String
+// `$name` String
+// `$weight` String
+// `$style` String
+// `$types` List
+// `$dir` String
+// `$path` String *predefined*
+//
+// Example of use:
+// @include font-face('Myriad Pro', 'Myriad-Pro-Light', 300, 'normal', 'myriad-pro')
+// ---------------------------------------------------------
+@mixin font-face ($family, $name, $weight, $style, $dir, $types: ('woff2', 'woff'), $path: $dfr-font-path) {
+  $path: if(
+    str-slice($path, -1) == '/',
+    str-slice($path, 0, -2),
+    $path
+  );
+
+  $path: '#{$path}/#{$dir}/#{$name}';
+  $src: null;
+
+  @each $type in $types {
+    // stylelint-disable function-url-quotes
+    $src: append($src, url(quote($path + '.' + $type)) format(quote($type)), comma);
+    // stylelint-enable function-url-quotes
+  }
+
+  @font-face {
+    font: {
+      family: quote($family);
+      weight: $weight;
+      style: $style;
+    }
+
+    src: $src;
+  }
+}

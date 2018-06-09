@@ -1,0 +1,117 @@
+// ---------------------------------------------------------
+// margin
+// Set predefined margin on an element
+//
+// Required arguments:
+// `$namespace` String
+// `$properties` List
+//
+// Allowed `$namespace`(s) can be found at:
+// "abstracts/iterators/_spacing.scss" @ $dfr-spacing
+//
+// Allowed `$sides`:
+// 'top', 'right', 'bottom', 'left', 'x', 'y'
+//
+// Example of use:
+// @include margin('xs', 'x')
+// @include margin('xs', ('bottom', 'left'))
+// @include margin('xs', ('y', 'left'))
+//
+// *Attention*
+// Improper use of this mixin can output duplicate margin
+// For example, if you use $sides as ('x', 'left')
+// Since 'x' means right and left, it would output:
+// margin-right, margin-left, margin-left
+// ---------------------------------------------------------
+@mixin margin ($namespace, $properties: (''), $type: 'default') {
+  @include spacing($namespace, $properties, $type, 'margin');
+}
+
+// ---------------------------------------------------------
+// padding
+// Set predefined padding on an element
+//
+// Required arguments:
+// `$namespace` String
+// `$properties` List
+//
+// Allowed `$namespace`(s) can be found at:
+// "abstracts/variables/_global.scss" @ $dfr-spacing
+//
+// Allowed `$sides`:
+// 'top', 'right', 'bottom', 'left', 'x', 'y'
+//
+// Examples of use:
+// @include padding('xs', 'x')
+// @include padding('xs', ('bottom', 'left'))
+// @include padding('xs', ('y', 'left'))
+//
+// *Attention*
+// Improper use of this mixin can output duplicate padding
+// For example, if you use $sides as ('x', 'left')
+// Since 'x' means right and left, it would output:
+// padding-right, padding-left, padding-left
+// ---------------------------------------------------------
+@mixin padding ($namespace, $properties: (''), $type: 'default') {
+  @include spacing($namespace, $properties, $type, 'padding');
+}
+
+// ---------------------------------------------------------
+// spacing
+// Used in helper `@mixin's` (margin & padding)
+// ---------------------------------------------------------
+@mixin spacing ($namespace, $sides, $type, $property) {
+  $orientations: (
+    'x': ('right', 'left'),
+    'y': ('top', 'bottom')
+  );
+  $map: get('spacing.#{$type}', $dfr-iterators);
+  $typeCheck: type-of($namespace) == 'string' and $namespace != 'auto';
+  $size: null;
+
+  @if type-of($namespace) == 'number' {
+    $size: convert-unit($namespace, 'rem');
+  }
+  @else if $namespace == 'auto' {
+    $size: unquote($namespace);
+  }
+
+  @each $side in $sides {
+    @if $side == 'x' or $side == 'y' {
+      $axis: map-get($orientations, $side);
+
+      @if $typeCheck {
+        $size: convert-unit(get('#{$namespace}.#{$side}', $map), 'rem');
+      }
+
+      @for $i from 1 through length($axis) {
+        #{$property}-#{nth($axis, $i)}: $size;
+      }
+    }
+    @else if index(map-get($orientations, 'x'), $side) != null {
+      @if $typeCheck {
+        $size: convert-unit(get('#{$namespace}.x', $map), 'rem');
+      }
+
+      #{$property}-#{$side}: $size;
+    }
+    @else if index(map-get($orientations, 'y'), $side) != null {
+      @if $typeCheck {
+        $size: convert-unit(get('#{$namespace}.y', $map), 'rem');
+      }
+
+      #{$property}-#{$side}: $size;
+    }
+    @else {
+      @if $typeCheck {
+        $sizeY: convert-unit(get('#{$namespace}.y', $map), 'rem');
+        $sizeX: convert-unit(get('#{$namespace}.x', $map), 'rem');
+
+        #{$property}: if($sizeY == $sizeX, $sizeY, $sizeY $sizeX);
+      }
+      @else {
+        #{$property}: $size;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+// ---------------------------------------------------------
+// not
+// The ability to list more than one selector
+//
+// Required arguments:
+// `$rules...`
+//
+// Examples of use:
+// .el { @include not('.active') { ... } }
+// ---------------------------------------------------------
+@mixin not ($rules...) {
+  $not-rules: '';
+
+  @each $rule in $rules {
+    $not-rules: $not-rules + ':not(#{$rule})';
+  }
+
+  &#{$not-rules} {
+    @content;
+  }
+}
+
+
+// ---------------------------------------------------------
+// not-disabled
+// Helper that uses `not` mixin, for disabled rules
+//
+// Examples of use:
+// .el { @include not-disabled { ... } }
+// ---------------------------------------------------------
+@mixin not-disabled {
+  @include not(':disabled') {
+    @content;
+  }
+}

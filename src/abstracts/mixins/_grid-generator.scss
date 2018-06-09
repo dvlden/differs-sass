@@ -1,0 +1,39 @@
+// ---------------------------------------------------------
+// grid-generator
+// Helps to generate the grid easier and cleaner
+//
+// Required arguments:
+// `$namespace` String
+// `$number` Number
+//
+// Allowed `$namespace`(s) can be found at:
+// "abstracts/variables/breakpoints.scss" @ $dfr-media-breakpoints
+//
+// Example of use:
+// @include grid-generator('xs', 1)
+// ---------------------------------------------------------
+@mixin grid-generator ($namespace, $number) {
+  $dfr-grid-formula: grid-calc($number);
+
+  $suffix: if(
+    $namespace == 'xs',
+    $number,
+    #{$namespace}-#{$number}
+  );
+
+  .column {
+    &.is-#{$suffix} {
+      flex: {
+        grow: 0;
+        shrink: 0;
+        basis: $dfr-grid-formula;
+      }
+    }
+  }
+
+  .has-offset {
+    &-#{$suffix} {
+      margin-left: $dfr-grid-formula;
+    }
+  }
+}

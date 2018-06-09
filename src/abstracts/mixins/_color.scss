@@ -1,0 +1,56 @@
+// ---------------------------------------------------------
+// text-color
+// Set predefined color of a text
+//
+// Required arguments:
+// `$namespace` String
+//
+// Allowed `$value`(s) as namespaces can be found at:
+// "abstracts/iterators/colors.scss"
+//
+// Examples of use:
+// @include text-color('almost-dark')
+// ---------------------------------------------------------
+@mixin text-color ($namespace) {
+  color: get('colors.#{$namespace}');
+}
+
+
+// ---------------------------------------------------------
+// background-color
+// Set predefined color of a background
+//
+// Required arguments:
+// `$namespace` String
+//
+// Allowed `$value`(s) as namespaces can be found at:
+// "abstracts/iterators/colors.scss"
+//
+// Examples of use:
+// @include background-color('almost-dark')
+// ---------------------------------------------------------
+@mixin background-color ($namespace) {
+  background-color: get('colors.#{$namespace}');
+}
+
+
+// ---------------------------------------------------------
+// color
+// Used in helper `@mixin's` (text-color & background-color)
+// ---------------------------------------------------------
+@mixin color ($namespace) {
+  $inverse-color: if(
+    str-index($namespace, 'light'),
+    'light',
+    'dark'
+  );
+
+  $color: if(
+    str-index($namespace, '-'),
+    str-slice($namespace, 0, str-index($namespace, '-')) + $inverse-color,
+    $inverse-color
+  );
+
+  @include background-color($namespace);
+  @include text-color($color);
+}
