@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  This project is currently a **work in progress**... <br>
+  This project is currently a <b>work in progress</b>... <br>
   Any kind of help is appreciated! Also, if you could, please :star: this project 
   if you want to support me and increase my motivation, thank you!
 </p>
