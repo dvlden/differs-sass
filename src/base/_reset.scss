@@ -1,0 +1,75 @@
+// at the moment, using normalize.css as dependency for the reset
+// but planning to remove it and write minimal normalization instead
+@import 'node_modules/normalize.css/normalize';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: convert-unit($dfr--root-fontSize-small, 'rem');
+
+  @include media-min('l') {
+    font-size: convert-unit($dfr--root-fontSize-large, 'rem');
+  }
+}
+
+body {
+  line-height: $dfr--base-lineHeight;
+  font: {
+    family: $dfr-fontFamily;
+    size: convert-unit($dfr--base-fontSize, 'rem');
+  }
+
+  @include text-color('almost-dark');
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  border: {
+    width: $dfr-borderWidth;
+    style: $dfr-borderStyle;
+    color: $dfr-borderColor;
+  }
+
+  @include margin('xl', 'y');
+}
+
+ul,
+ol {
+  @include margin('m', 'bottom');
+  @include padding('m', 'left');
+}
+
+code {
+  font-family: $dfr-fontFamily-mono;
+}
+
+p {
+  @include margin(auto, 'top');
+  @include margin('m', 'bottom');
+}
+
+// h1 to h6
+@for $i from 1 to 6 {
+  h#{$i} {
+    @include margin(auto, 'top');
+    @include margin('l', 'bottom');
+  }
+}
+
+a,
+ins,
+u {
+  text-decoration-skip: ink;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
