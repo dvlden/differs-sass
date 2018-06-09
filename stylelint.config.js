@@ -5,9 +5,10 @@ module.exports = {
     'at-rule-empty-line-before': ['always', {
       except: [
         'blockless-after-same-name-blockless',
-        'first-nested',
+        'first-nested'
       ],
       ignore: ['after-comment'],
+      ignoreAtRules: ['else']
     }],
     'at-rule-name-case': 'lower',
     'at-rule-name-space-after': 'always-single-line',
@@ -86,14 +87,14 @@ module.exports = {
     'function-max-empty-lines': 0,
     'function-name-case': 'lower',
     'function-parentheses-newline-inside': 'always-multi-line',
-    'function-parentheses-space-inside': 'never',
+    'function-parentheses-space-inside': 'never-single-line',
     'function-url-quotes': 'always',
     'function-whitespace-after': 'always',
     'indentation': 2,
     'keyframe-declaration-no-important': true,
     'length-zero-no-unit': true,
     'max-empty-lines': 2,
-    'max-nesting-depth': [1, {
+    'max-nesting-depth': [2, {
       'ignoreAtRules': [
         'media',
         'supports',
@@ -129,25 +130,26 @@ module.exports = {
       ignore: ['after-comment'],
     }],
     'scss/at-extend-no-missing-placeholder': true,
-    'scss/at-function-pattern': ['^(?:[a-z]+[a-z-]+[^-])$', {
+    'scss/at-function-pattern': ['^[a-z]+(-[a-z]+)*$', {
       'message': 'Function should be written in lowercase with hyphens'
     }],
     'scss/at-import-no-partial-leading-underscore': true,
     'scss/at-import-partial-extension-blacklist': ['scss'],
-    'scss/at-mixin-pattern': ['^(?:[a-z]+[a-z-]+[^-])$', {
+    'scss/at-mixin-pattern': ['^[a-z]+(-[a-z]+)*$', {
       'message': 'Mixin should be written in lowercase with hyphens'
     }],
     'scss/at-rule-no-unknown': true,
-    'scss/dollar-variable-colon-space-after': 'always',
+    'scss/dollar-variable-colon-space-after': 'at-least-one-space',
     'scss/dollar-variable-colon-space-before': 'never',
     'scss/dollar-variable-pattern': ['^dfr(?:--(?:base|root|[xy]))?(?:-(?!base\b|root\b|[xy]\b)[a-z]+(?:[A-Z][a-z]+)*)+$', {
-      'message': 'Variable must be written properly... It is predefined pattern!'
+      'message': 'Variable must be written properly... It is predefined pattern!',
+      'ignore': 'local'
     }],
-    'scss/percent-placeholder-pattern': ['^(?:[a-z]+[a-z-]+[^-])$', {
+    'scss/percent-placeholder-pattern': ['^[a-z]+(-[a-z]+)*$', {
       'message': 'Placeholder should be written in lowercase with hyphens'
     }],
     'scss/selector-no-redundant-nesting-selector': true,
-    'selector-class-pattern': ['^(?:[a-z]+[a-z-]+[^-])$', {
+    'selector-class-pattern': ['^[a-z]+(-[a-z]+)*$', {
       'message': 'Selector should be written in lowercase with hyphens'
     }],
     'selector-attribute-brackets-space-inside': 'never',
