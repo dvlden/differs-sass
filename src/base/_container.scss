@@ -1,0 +1,20 @@
+%dfr-container-common {
+  padding-right: convert-unit($dfr-grid-gutter, 'rem');
+  padding-left: convert-unit($dfr-grid-gutter, 'rem');
+}
+
+.container {
+  @extend %dfr-container-common;
+
+  @include margin(auto, 'x');
+
+  @each $namespace, $size in get('container') {
+    @include media-min($namespace) {
+      max-width: convert-unit($size, 'rem');
+    }
+  }
+
+  &-fluid {
+    @extend %dfr-container-common;
+  }
+}
