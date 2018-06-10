@@ -1,0 +1,35 @@
+%dfr-headings-common {
+  font-weight: $dfr-heading-fontWeight;
+  line-height: $dfr-heading-lineHeight;
+  margin-bottom: convert-unit($dfr-heading-marginBottom, 'rem');
+}
+
+@each $size in get('headings', $dfr-iterators) {
+  $index: index(get('headings'), $size);
+
+  h#{$index},
+  .title-#{$index} {
+    @extend %dfr-headings-common;
+
+    font-size: convert-unit($size, 'rem');
+  }
+}
+
+blockquote {
+  @include padding('s');
+
+  margin-left: 0;
+  border-left: {
+    width: $dfr-borderWidth;
+    style: $dfr-borderStyle;
+    color: $dfr-borderColor;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  cite {
+    @include text-color('medium');
+  }
+}
