@@ -9,10 +9,10 @@
 }
 
 :root {
-  font-size: convert-unit($dfr--root-fontSize-small, 'rem');
+  font-size: $dfr--root-fontSize-small;
 
   @include media-min('l') {
-    font-size: convert-unit($dfr--root-fontSize-large, 'rem');
+    font-size: $dfr--root-fontSize-large;
   }
 }
 
@@ -20,7 +20,6 @@ body {
   line-height: $dfr--base-lineHeight;
   font: {
     family: $dfr-fontFamily;
-    size: convert-unit($dfr--base-fontSize, 'rem');
   }
 
   @include text-color('almost-dark');
@@ -56,10 +55,13 @@ p {
 }
 
 // h1 to h6
+%dfr-headings-reset {
+  @include margin(auto, 'y');
+}
+
 @for $i from 1 through 6 {
   h#{$i} {
-    @include margin(auto, 'top');
-    @include margin('l', 'bottom');
+    @extend %dfr-headings-reset;
   }
 }
 
