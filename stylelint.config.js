@@ -94,7 +94,7 @@ module.exports = {
     'keyframe-declaration-no-important': true,
     'length-zero-no-unit': true,
     'max-empty-lines': 2,
-    'max-nesting-depth': [2, {
+    'max-nesting-depth': [3, {
       'ignoreAtRules': [
         'media',
         'supports',
@@ -164,7 +164,7 @@ module.exports = {
     'selector-list-comma-space-after': 'always-single-line',
     'selector-list-comma-space-before': 'never',
     'selector-max-attribute': 1,
-    'selector-max-class': 2,
+    'selector-max-class': 3,
     'selector-max-combinators': 2,
     'selector-max-compound-selectors': 2,
     'selector-max-empty-lines': 0,
