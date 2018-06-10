@@ -56,7 +56,7 @@ p {
 }
 
 // h1 to h6
-@for $i from 1 to 6 {
+@for $i from 1 through 6 {
   h#{$i} {
     @include margin(auto, 'top');
     @include margin('l', 'bottom');
