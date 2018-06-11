@@ -19,7 +19,7 @@
 body {
   line-height: $dfr--base-lineHeight;
   font: {
-    family: $dfr-fontFamily;
+    family: get('font.family.sans-serif');
   }
 
   @include text-color('almost-dark');
@@ -31,9 +31,9 @@ a {
 
 hr {
   border: {
-    width: $dfr-borderWidth;
-    style: $dfr-borderStyle;
-    color: $dfr-borderColor;
+    width: get('border.width');
+    style: get('border.style');
+    color: get('border.color');
   }
 
   @include margin('xl', 'y');
@@ -46,7 +46,7 @@ ol {
 }
 
 code {
-  font-family: $dfr-fontFamily-mono;
+  font-family: get('font.family.mono');
 }
 
 p {

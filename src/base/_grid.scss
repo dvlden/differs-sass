@@ -50,7 +50,7 @@ $dfr-grid-gutter-rem: convert-unit($dfr-grid-gutter, 'rem');
   }
 }
 
-@each $namespace, $size in get('breakpoints') {
+@each $namespace, $size in get('breakpoint') {
   @if type-of($size) == 'number' {
     @include media-min($namespace) {
       @for $i from 1 through $dfr-grid-columns {
