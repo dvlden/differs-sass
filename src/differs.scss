@@ -1,12 +1,15 @@
-// Framework core
+// Core
 @import 'abstracts/variables';
-@import 'abstracts/iterators';
+@import 'abstracts/config';
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
 
-// Framework appeal
+// Base
 @import 'base/@reset';
 @import 'base/container';
 @import 'base/grid';
 @import 'base/print';
 @import 'base/typography';
+
+// Components
+// ..
