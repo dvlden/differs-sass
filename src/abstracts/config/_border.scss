@@ -1,0 +1,18 @@
+$dfr-config: map-merge(
+  (
+    'border': (
+      'width': 2px,
+      'style': solid,
+      'color': $dfr--base-color-dark,
+      'radius': (
+        'xs': $dfr--base-borderRadius / 2,
+        's': $dfr--base-borderRadius / 1.25,
+        'm': $dfr--base-borderRadius,
+        'l': $dfr--base-borderRadius * 1.25,
+        'xl': $dfr--base-borderRadius * 2,
+        'f': 50%
+      )
+    )
+  ),
+  $dfr-config
+);

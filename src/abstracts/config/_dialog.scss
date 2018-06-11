@@ -1,0 +1,12 @@
+$dfr-config: map-merge(
+  (
+    'dialog': (
+      'z-index': (
+        'main':     2147483647,
+        'content':  1,
+        'backdrop': -1
+      )
+    )
+  ),
+  $dfr-config
+);

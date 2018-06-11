@@ -1,0 +1,22 @@
+$dfr-config: map-merge(
+  (
+    'heading': (
+      'font': (
+        'weight': 500,
+        'size': (
+          ($dfr--base-fontSize + 26),
+          ($dfr--base-fontSize + 20),
+          ($dfr--base-fontSize + 14),
+          ($dfr--base-fontSize + 8),
+          ($dfr--base-fontSize + 4),
+          ($dfr--base-fontSize + 2)
+        )
+      ),
+      'line-height': ($dfr--base-lineHeight / 1.2),
+      'margin': (
+        'bottom': $dfr--y-spacing
+      )
+    )
+  ),
+  $dfr-config
+);

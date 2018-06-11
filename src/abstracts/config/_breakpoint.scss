@@ -1,0 +1,12 @@
+$dfr-config: map-merge(
+  (
+    'breakpoint': (
+      'xs': null,
+      's':  544px,
+      'm':  768px,
+      'l':  992px,
+      'xl': 1200px
+    )
+  ),
+  $dfr-config
+);
