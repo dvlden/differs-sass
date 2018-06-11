@@ -1,0 +1,29 @@
+$dfr-config: map-merge(
+  (
+    'spacing': (
+      'default': (
+        'xs': (
+          'x': $dfr--x-spacing / 2.5,
+          'y': $dfr--x-spacing / 2.5
+        ),
+        's': (
+          'x': $dfr--x-spacing / 1.5,
+          'y': $dfr--x-spacing / 1.5
+        ),
+        'm': (
+          'x': $dfr--base-spacing,
+          'y': $dfr--base-spacing
+        ),
+        'l': (
+          'x': $dfr--x-spacing * 2,
+          'y': $dfr--y-spacing * 2
+        ),
+        'xl': (
+          'x': $dfr--x-spacing * 4,
+          'y': $dfr--y-spacing * 4
+        )
+      )
+    )
+  ),
+  $dfr-config
+);
