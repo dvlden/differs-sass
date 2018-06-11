@@ -7,7 +7,7 @@
 // `$properties` List
 //
 // Allowed `$namespace`(s) can be found at:
-// "abstracts/iterators/_spacing.scss" @ $dfr-spacing
+// "abstracts/config/_spacing.scss" @ $dfr-spacing
 //
 // Allowed `$sides`:
 // 'top', 'right', 'bottom', 'left', 'x', 'y'
@@ -65,7 +65,7 @@
     'x': ('right', 'left'),
     'y': ('top', 'bottom')
   );
-  $map: get('spacing.#{$type}', $dfr-iterators);
+  $map: get('spacing.#{$type}');
   $typeCheck: type-of($namespace) == 'string' and $namespace != 'auto';
   $size: null;
 

@@ -6,13 +6,13 @@
 // `$namespace` String
 //
 // Allowed `$value`(s) as namespaces can be found at:
-// "abstracts/iterators/colors.scss"
+// "abstracts/config/color.scss"
 //
 // Examples of use:
 // @include text-color('almost-dark')
 // ---------------------------------------------------------
 @mixin text-color ($namespace) {
-  color: get('colors.#{$namespace}');
+  color: get('color.#{$namespace}');
 }
 
 
@@ -24,13 +24,13 @@
 // `$namespace` String
 //
 // Allowed `$value`(s) as namespaces can be found at:
-// "abstracts/iterators/colors.scss"
+// "abstracts/config/color.scss"
 //
 // Examples of use:
 // @include background-color('almost-dark')
 // ---------------------------------------------------------
 @mixin background-color ($namespace) {
-  background-color: get('colors.#{$namespace}');
+  background-color: get('color.#{$namespace}');
 }
 
 
@@ -41,8 +41,8 @@
 @mixin color ($namespace) {
   $inverse-color: if(
     str-index($namespace, 'light'),
-    'light',
-    'dark'
+    'dark',
+    'light'
   );
 
   $color: if(

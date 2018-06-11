@@ -6,13 +6,13 @@
 // `$namespace` String
 //
 // Allowed `$namespace`(s) can be found at:
-// "abstracts/variables/breakpoints.scss" @ $dfr-breakpoints
+// "abstracts/config/breakpoint.scss"
 //
 // Example of use:
 // @include media-min('xs') { ... }
 // ---------------------------------------------------------
 @mixin media-min ($namespace) {
-  @media (min-width: convert-unit(get('breakpoints.#{$namespace}'), 'em')) {
+  @media (min-width: convert-unit(get('breakpoint.#{$namespace}'), 'em')) {
     @content;
   }
 }
@@ -25,7 +25,7 @@
 // `$namespace` String
 //
 // Allowed `$namespace`(s) can be found at:
-// "abstracts/variables/breakpoints.scss" @ $dfr-breakpoints
+// "abstracts/config/breakpoint.scss" @ $dfr-breakpoint
 //
 // Example of use:
 // @include media-max('xs') { ... }
