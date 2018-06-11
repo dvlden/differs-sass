@@ -1,7 +1,16 @@
-// Main variables
-@import 'variables/@main';
+$dfr--base-color-dark:                  #000 !default;
+$dfr--base-color-light:                 #fff !default;
 
-// Other variables
-@import 'variables/breakpoints';
-@import 'variables/container';
-@import 'variables/headings';
+$dfr--base-lineHeight:                  1.5 !default;
+$dfr--base-fontSize:                    16px !default;
+$dfr--root-fontSize-small:              ($dfr--base-fontSize - 2) !default;
+$dfr--root-fontSize-large:              $dfr--base-fontSize !default;
+
+$dfr--base-borderRadius:                4px !default;
+
+$dfr--base-spacing:                     15px !default;
+$dfr--x-spacing:                        $dfr--base-spacing !default;
+$dfr--y-spacing:                        $dfr--base-spacing / 2 !default;
+
+$dfr-grid-columns:                      12 !default;
+$dfr-grid-gutter:                       15px !default;
