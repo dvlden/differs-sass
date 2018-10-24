@@ -1,4 +1,4 @@
-$dfr-config: map-merge(
+$dfr-config: deep-map-merge(
   (
     'color': (
       'dark':         $dfr--base-color-dark,
@@ -8,5 +8,6 @@ $dfr-config: map-merge(
       'light':        $dfr--base-color-light
     )
   ),
-  $dfr-config
+  $dfr-config,
+  true
 );

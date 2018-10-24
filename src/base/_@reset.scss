@@ -1,7 +1,3 @@
-// at the moment, using normalize.css as dependency for the reset
-// but planning to remove it and write minimal normalization instead
-@import 'node_modules/normalize.css/normalize';
-
 *,
 *::before,
 *::after {
@@ -17,8 +13,11 @@
 }
 
 body {
+  margin: 0;
   line-height: $dfr--base-lineHeight;
   font: {
+    size: $dfr--base-fontSize;
+    weight: get('font.weight');
     family: get('font.family.sans-serif');
   }
 
@@ -27,13 +26,21 @@ body {
 
 a {
   text-decoration: none;
+
+  @include text-color('almost-dark');
+
+  &:hover {
+    @include text-color('medium');
+  }
 }
 
 hr {
+  border: none;
+
   border: {
-    width: get('border.width');
-    style: get('border.style');
-    color: get('border.color');
+    top-width: get('border.width');
+    top-style: get('border.style');
+    top-color: get('border.color');
   }
 
   @include margin('xl', 'y');
@@ -41,22 +48,34 @@ hr {
 
 ul,
 ol {
-  @include margin('m', 'bottom');
-  @include padding('m', 'left');
+  @include margin(0, 'y');
+  @include padding('l', 'left');
 }
 
-code {
-  font-family: get('font.family.mono');
+pre,
+code,
+kbd {
+  font: {
+    family: get('font.family.mono');
+    size: 1rem;
+  }
+}
+
+pre {
+  @include margin(0, 'y');
+}
+
+img {
+  vertical-align: middle;
 }
 
 p {
-  @include margin(auto, 'top');
-  @include margin('m', 'bottom');
+  @include margin(0, 'y');
 }
 
 // h1 to h6
 %dfr-headings-reset {
-  @include margin(auto, 'y');
+  @include margin(0, 'y');
 }
 
 @for $i from 1 through 6 {
@@ -65,13 +84,14 @@ p {
   }
 }
 
-a,
-ins,
-u {
-  text-decoration-skip: ink;
+small {
+  font-size: 80%;
+}
+
+iframe {
+  border: none;
 }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0;
 }

@@ -72,9 +72,9 @@ module.exports = {
       ],
     }],
     'declaration-no-important': true,
-    'declaration-property-value-blacklist': {
-      '/^border-?/': ['none']
-    },
+    // 'declaration-property-value-blacklist': {
+    //   '/^border-?/': ['none']
+    // },
     'font-family-no-duplicate-names': true,
     'font-family-no-missing-generic-family-keyword': true,
     'font-family-name-quotes': 'always-where-recommended',

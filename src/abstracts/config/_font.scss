@@ -1,6 +1,6 @@
 // stylelint-disable value-keyword-case
 // stylelint-disable function-comma-newline-after
-$dfr-config: map-merge(
+$dfr-config: deep-map-merge(
   (
     'font': (
       'family': (
@@ -22,7 +22,8 @@ $dfr-config: map-merge(
       )
     )
   ),
-  $dfr-config
+  $dfr-config,
+  true
 );
 // stylelint-enable value-keyword-case
 // stylelint-enable function-comma-newline-after

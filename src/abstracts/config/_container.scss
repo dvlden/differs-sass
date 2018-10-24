@@ -1,4 +1,4 @@
-$dfr-config: map-merge(
+$dfr-config: deep-map-merge(
   (
     'container': (
       's':  510px,
@@ -7,5 +7,6 @@ $dfr-config: map-merge(
       'xl': 1140px
     )
   ),
-  $dfr-config
+  $dfr-config,
+  true
 );

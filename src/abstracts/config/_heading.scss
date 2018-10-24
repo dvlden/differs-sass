@@ -1,4 +1,4 @@
-$dfr-config: map-merge(
+$dfr-config: deep-map-merge(
   (
     'heading': (
       'font': (
@@ -18,5 +18,6 @@ $dfr-config: map-merge(
       )
     )
   ),
-  $dfr-config
+  $dfr-config,
+  true
 );

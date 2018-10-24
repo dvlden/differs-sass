@@ -1,4 +1,4 @@
-$dfr-config: map-merge(
+$dfr-config: deep-map-merge(
   (
     'breakpoint': (
       'xs': null,
@@ -8,5 +8,6 @@ $dfr-config: map-merge(
       'xl': 1200px
     )
   ),
-  $dfr-config
+  $dfr-config,
+  true
 );

@@ -66,13 +66,13 @@
     'y': ('top', 'bottom')
   );
   $map: get('spacing.#{$type}');
-  $typeCheck: type-of($namespace) == 'string' and $namespace != 'auto';
-  $size: null;
+  $typeCheck: type-of($namespace) == 'string' and $namespace != 'auto' and $namespace != 'unset';
+  $size: $namespace; // instead of null, maybe it's a zero which should be unitless
 
-  @if type-of($namespace) == 'number' {
+  @if type-of($namespace) == 'number' and not unitless($namespace) {
     $size: convert-unit($namespace, 'rem');
   }
-  @else if $namespace == 'auto' {
+  @else if $namespace == 'auto' or $namespace == 'unset' {
     $size: unquote($namespace);
   }
 
