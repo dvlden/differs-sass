@@ -10,7 +10,7 @@ $dfr-config: deep-map-merge(
         'm': $dfr--base-borderRadius,
         'l': $dfr--base-borderRadius * 1.25,
         'xl': $dfr--base-borderRadius * 2,
-        'f': 50%
+        'f': 9999px
       )
     )
   ),

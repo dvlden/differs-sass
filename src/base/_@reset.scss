@@ -26,12 +26,6 @@ body {
 
 a {
   text-decoration: none;
-
-  @include text-color('almost-dark');
-
-  &:hover {
-    @include text-color('medium');
-  }
 }
 
 hr {
@@ -76,6 +70,7 @@ p {
 // h1 to h6
 %dfr-headings-reset {
   @include margin(0, 'y');
+  font-weight: 600;
 }
 
 @for $i from 1 through 6 {

@@ -9,7 +9,6 @@
 @each $size in get('heading.font.size') {
   $index: index(get('heading.font.size'), $size);
 
-  h#{$index},
   .title-#{$index} {
     @extend %dfr-headings-common;
 
