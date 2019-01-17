@@ -19,17 +19,3 @@
     @content;
   }
 }
-
-
-// ---------------------------------------------------------
-// not-disabled
-// Helper that uses `not` mixin, for disabled rules
-//
-// Examples of use:
-// .el { @include not-disabled { ... } }
-// ---------------------------------------------------------
-@mixin not-disabled {
-  @include not(':disabled') {
-    @content;
-  }
-}

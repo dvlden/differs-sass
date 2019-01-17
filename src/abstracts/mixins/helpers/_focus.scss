@@ -1,0 +1,13 @@
+@mixin focus {
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba(get('color.medium'), .4);
+    z-index: 1;
+  }
+}
+
+@mixin action-focus {
+  &:focus ~ .action-label::before {
+    box-shadow: 0 0 0 2px rgba(get('color.medium'), .4);
+  }
+}

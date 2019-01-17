@@ -31,6 +31,6 @@ blockquote {
   }
 
   cite {
-    @include text-color('medium');
+    color: get('color.medium');
   }
 }

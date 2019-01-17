@@ -1,0 +1,322 @@
+.button {
+  background-color: transparent;
+  display: inline-block;
+  line-height: $dfr--base-lineHeight;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  font: {
+    family: inherit;
+    weight: get('font.weight');
+    size: convert-unit($dfr--base-fontSize, 'rem');
+  }
+  border: {
+    width: get('border.width');
+    style: get('border.style');
+    color: transparent;
+  } // without this, filled button would look weird - next to an outlined button
+
+  @include padding('m', 'y', 'button');
+  @include padding('m', 'x', 'button');
+  @include focus;
+
+  &:disabled,
+  &.is-disabled {
+    opacity: .5;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  &.is-disabled,
+  &.is-loading {
+    pointer-events: none;
+  }
+
+  &.is-light {
+    @include color('light');
+
+    @include not(':disabled') {
+      &:hover {
+        @include color('almost-light');
+      }
+
+      &:active {
+        @include color('almost-dark');
+      }
+    }
+
+    &.is-loading {
+      &::after {
+        border: {
+          top-color: get('color.almost-dark');
+          left-color: get('color.almost-dark');
+        }
+      }
+
+      @include not(':disabled') {
+        &:hover {
+          &::after {
+            border: {
+              top-color: get('color.almost-dark');
+              left-color: get('color.almost-dark');
+            }
+          }
+        }
+
+        &:active {
+          &::after {
+            border: {
+              top-color: get('color.light');
+              left-color: get('color.light');
+            }
+          }
+        }
+      }
+    }
+
+    &.is-outlined {
+      color: get('color.light');
+      border-color: get('color.light');
+
+      @include not(':disabled') {
+        &:hover {
+          @include color('light');
+
+          border-color: get('color.light');
+        }
+
+        &:active {
+          @include color('almost-light');
+
+          border-color: get('color.almost-light');
+        }
+      }
+
+      &.is-loading {
+        &::after {
+          border: {
+            top-color: get('color.light');
+            left-color: get('color.light');
+          }
+        }
+
+        @include not(':disabled') {
+          &:hover {
+            &::after {
+              border: {
+                top-color: get('color.medium');
+                left-color: get('color.medium');
+              }
+            }
+          }
+
+          &:active {
+            &::after {
+              border: {
+                top-color: get('color.dark');
+                left-color: get('color.dark');
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.as-close {
+      &::before,
+      &::after {
+        background-color: get('color.dark');
+      }
+
+      &:active {
+        &::before,
+        &::after {
+          background-color: get('color.light');
+        }
+      }
+    }
+  }
+
+  &.is-dark {
+    @include color('dark');
+
+    @include not(':disabled') {
+      &:hover {
+        @include color('almost-dark');
+      }
+
+      &:active {
+        @include color('almost-light');
+      }
+    }
+
+    &.is-loading {
+      &::after {
+        border: {
+          top-color: get('color.almost-light');
+          left-color: get('color.almost-light');
+        }
+      }
+
+      @include not(':disabled') {
+        &:hover {
+          &::after {
+            border: {
+              top-color: get('color.almost-light');
+              left-color: get('color.almost-light');
+            }
+          }
+        }
+
+        &:active {
+          &::after {
+            border: {
+              top-color: get('color.dark');
+              left-color: get('color.dark');
+            }
+          }
+        }
+      }
+    }
+
+    &.is-outlined {
+      color: get('color.dark');
+      border-color: get('color.dark');
+
+      @include not(':disabled') {
+        &:hover {
+          @include color('dark');
+
+          border-color: get('color.dark');
+        }
+
+        &:active {
+          @include color('almost-dark');
+
+          border-color: get('color.almost-dark');
+        }
+      }
+
+      &.is-loading {
+        &::after {
+          border: {
+            top-color: get('color.dark');
+            left-color: get('color.dark');
+          }
+        }
+
+        @include not(':disabled') {
+          &:hover {
+            &::after {
+              border: {
+                top-color: get('color.medium');
+                left-color: get('color.medium');
+              }
+            }
+          }
+
+          &:active {
+            &::after {
+              border: {
+                top-color: get('color.light');
+                left-color: get('color.light');
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.as-close {
+      &::before,
+      &::after {
+        background-color: get('color.light');
+      }
+
+      &:active {
+        &::before,
+        &::after {
+          background-color: get('color.dark');
+        }
+      }
+    }
+  }
+
+  &.is-outlined {
+    background-color: transparent;
+  }
+
+  &.is-loading {
+    position: relative;
+    color: transparent !important;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border: {
+        width: 2px;
+        style: solid;
+        right-color: transparent;
+        bottom-color: transparent;
+      }
+
+      width: 1em;
+      height: 1em;
+      transform: translate(-50%, -50%);
+      animation: dfr-spin .8s ease infinite;
+
+      @include border-radius('f');
+    }
+  }
+
+  @include button-sizes(get('spacing.button'));
+
+  &.as-close {
+    background-color: transparent;
+    position: relative;
+    font-weight: 600;
+    padding: convert-unit(get('spacing.button.m.x'), 'rem');
+
+    @include border-radius('f');
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 2px;
+      height: 50%;
+      background-color: get('color.almost-dark');
+
+      @include border-radius('xs');
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &.is-xs {
+      padding: convert-unit(get('spacing.button.xs.x'), 'rem');
+    }
+
+    &.is-s {
+      padding: convert-unit(get('spacing.button.s.x'), 'rem');
+    }
+
+    &.is-l {
+      padding: convert-unit(get('spacing.button.l.x'), 'rem');
+    }
+
+    &.is-xl {
+      padding: convert-unit(get('spacing.button.xl.x'), 'rem');
+    }
+  }
+}

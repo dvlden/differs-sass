@@ -1,0 +1,98 @@
+.action {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  @include padding('l', 'left');
+
+  &.as-switch {
+    padding-left: 50px;
+
+    .action-element {
+      &:checked ~ .action-label {
+        &::before {
+          background-color: get('color.light');
+        }
+
+        &::after {
+          background-color: get('color.dark');
+          transform: translateX(27px) translateY(-50%);
+        }
+      }
+    }
+
+    .action-label {
+      &::before {
+        width: 40px;
+        left: -50px;
+      }
+
+      &::after {
+        background-color: get('color.almost-light');
+        height: 14px;
+        width: 14px;
+        left: -54px;
+      }
+    }
+  }
+
+  &-element {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0;
+
+    @include action-focus;
+
+    &:checked ~ .action-label {
+      &::before {
+        background-color: get('color.light');
+      }
+
+      &::after {
+        background-color: get('color.dark');
+      }
+    }
+
+    &[type='radio'] + .action-label {
+      &::before,
+      &::after {
+        border-radius: 50%;
+      }
+    }
+
+    &:disabled + .action-label {
+      opacity: .6;
+    }
+  }
+
+  &-label {
+    position: relative;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -#{get('spacing.default.l.x')};
+      display: block;
+    }
+
+    &::before {
+      width: 20px;
+      height: 20px;
+      background-color: get('color.light');
+      transform: translate(0%, -50%);
+      transition: background-color .1s ease-in-out;
+    }
+
+    &::after {
+      width: 10px;
+      height: 10px;
+      transform: translate(50%, -50%);
+      transition: transform .2s ease-in-out, background-color .1s ease-in-out;
+    }
+  }
+}

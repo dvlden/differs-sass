@@ -7,6 +7,12 @@
   <title>Differs</title>
 
   <link href="dist/differs.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #cacaca;
+    }
+  </style>
 </head>
 
 <body>
@@ -14,6 +20,62 @@
     <h1>
       Hello World
     </h1>
+
+    <div class="group">
+      <div class="group-items">
+        <input type="text" class="input is-light" placeholder="Demo Placeholder" />
+        <button class="button is-dark">Confirm</button>
+      </div>
+    </div>
+
+    <div class="group">
+      <input type="text" class="input is-light" value="Demo Value" />
+    </div>
+
+    <div class="group">
+      <input type="text" class="input is-light" disabled value="Disabled Value" />
+    </div>
+
+    <div class="group">
+      <div class="action">
+        <input type="checkbox" class="action-element" id="customCheck1" />
+        <label for="customCheck1" class="action-label">
+          Check Option One
+        </label>
+      </div>
+
+      <div class="action">
+        <input type="checkbox" class="action-element" id="customCheck2" />
+        <label for="customCheck2" class="action-label">
+          Check Option Two
+        </label>
+      </div>
+
+      <div class="action as-switch">
+        <input type="checkbox" class="action-element" id="customCheck3" />
+        <label for="customCheck3" class="action-label">
+          Check Option Three
+        </label>
+      </div>
+    </div>
+
+    <div class="group has-spacing">
+      <div class="group-items">
+        <div class="action">
+          <input type="radio" id="customRadio1" name="customRadio" class="action-element">
+          <label class="action-label" for="customRadio1">Toggle Option One</label>
+        </div>
+
+        <div class="action">
+          <input type="radio" id="customRadio2" name="customRadio" class="action-element">
+          <label class="action-label" for="customRadio2">Toggle Option Two</label>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="button is-dark">
+      Demo Button
+    </button>
   </div>
 </body>
 </html>

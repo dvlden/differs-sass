@@ -4,11 +4,11 @@ $dfr-config: deep-map-merge(
       'default': (
         'xs': (
           'x': $dfr--x-spacing / 2.5,
-          'y': $dfr--x-spacing / 2.5
+          'y': $dfr--y-spacing / 2.5
         ),
         's': (
           'x': $dfr--x-spacing / 1.5,
-          'y': $dfr--x-spacing / 1.5
+          'y': $dfr--y-spacing / 1.5
         ),
         'm': (
           'x': $dfr--base-spacing,

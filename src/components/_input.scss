@@ -1,0 +1,61 @@
+.input {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  line-height: $dfr--base-lineHeight;
+  font: {
+    family: inherit;
+    weight: get('font.weight');
+    size: convert-unit($dfr--base-fontSize, 'rem');
+  }
+  border: {
+    width: get('border.width');
+    style: get('border.style');
+    color: transparent;
+  }
+
+  @include padding('m', 'y', 'button');
+  @include padding('m', 'x', 'button');
+  @include focus;
+
+  &::placeholder {
+    color: get('color.medium');
+  }
+
+  &:disabled,
+  &[readonly] {
+    opacity: .6;
+  }
+
+  @include input-sizes(get('spacing.button'));
+
+  &.is-light {
+    @include color('light');
+
+    &.is-outlined {
+      color: get('color.light');
+      border-color: get('color.light');
+
+      &::placeholder {
+        color: get('color.almost-light');
+      }
+    }
+  }
+
+  &.is-dark {
+    @include color('dark');
+
+    &.is-outlined {
+      color: get('color.dark');
+      border-color: get('color.dark');
+
+      &::placeholder {
+        color: get('color.almost-dark');
+      }
+    }
+  }
+
+  &.is-outlined {
+    background-color: transparent;
+  }
+}

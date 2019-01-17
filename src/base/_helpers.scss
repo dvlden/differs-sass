@@ -1,0 +1,15 @@
+.group {
+  @include margin('m', 'bottom');
+
+  &.has-spacing {
+    .group-items > :not(:last-child) {
+      @include margin('m', 'right');
+    }
+  }
+
+  &-items {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+}

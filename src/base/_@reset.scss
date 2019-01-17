@@ -21,7 +21,7 @@ body {
     family: get('font.family.sans-serif');
   }
 
-  @include text-color('almost-dark');
+  color: get('color.almost-dark');
 }
 
 a {
@@ -89,4 +89,8 @@ iframe {
 
 table {
   border-collapse: collapse;
+}
+
+textarea {
+  resize: none;
 }

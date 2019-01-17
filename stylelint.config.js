@@ -94,7 +94,7 @@ module.exports = {
     'keyframe-declaration-no-important': true,
     'length-zero-no-unit': true,
     'max-empty-lines': 2,
-    'max-nesting-depth': [3, {
+    'max-nesting-depth': [4, {
       'ignoreAtRules': [
         'media',
         'supports',

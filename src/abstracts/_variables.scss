@@ -14,3 +14,7 @@ $dfr--y-spacing:                        $dfr--base-spacing / 2 !default;
 
 $dfr-grid-columns:                      12 !default;
 $dfr-grid-gutter:                       15px !default;
+
+$dfr-yiq-threshold:                     180 !default; // 128 is common default, but looks odd
+$dfr-yiq-color-dark:                    $dfr--base-color-dark !default;
+$dfr-yiq-color-light:                   $dfr--base-color-light !default;

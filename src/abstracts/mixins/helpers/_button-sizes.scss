@@ -1,0 +1,17 @@
+@mixin button-sizes ($sizes) {
+  @each $key, $value in $sizes {
+    @if $key != 'm' {
+      &.is-#{$key} {
+        @include padding($key, 'y', 'button');
+        @include padding($key, 'x', 'button');
+
+        font-size: convert-unit(get('font.size.#{$key}'), 'rem');
+      }
+    }
+  }
+
+  &.is-full {
+    width: 100%;
+    display: block;
+  }
+}
