@@ -70,6 +70,7 @@ p {
 // h1 to h6
 %dfr-headings-reset {
   @include margin(0, 'y');
+
   font-weight: 600;
 }
 

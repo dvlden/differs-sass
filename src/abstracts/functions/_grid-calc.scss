@@ -19,5 +19,5 @@
     @error 'The argument $columns: `#{$columns}` is of incorrect type: `#{type-of($columns)}`. Type of `Number` is required!';
   }
 
-  @return (100 / $columns * $number) + %;
+  @return unquote((100 / $columns * $number) + '%');
 }
