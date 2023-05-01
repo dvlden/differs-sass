@@ -1,3 +1,7 @@
+@use 'sass:math';
+@use 'sass:string';
+@use '../helper-functions' as utils;
+
 // ---------------------------------------------------------
 // convert-unit
 // Convert number's pixel unit to em/rem
@@ -17,12 +21,12 @@
   @if type-of($number) != 'number' {
     @error 'The argument $number: `#{$number}` is of incorrect type: `#{type-of($number)}`. Type of `Number` is required!';
   }
-  @else if unit($number) != 'px' {
+  @else if math.is-unitless($number) != 'px' {
     @error 'The argument $number: `#{$number}` has incorrect unit: `#{unit($number)}`. Unit of `px` is required!';
   }
   @else if $unit != 'em' and $unit != 'rem' {
     @error 'The argument $unit: `#{$unit}` has incorrect value: `#{$unit}`. Value of `em` or `rem` is required!';
   }
 
-  @return strip-unit($number) / strip-unit($base) + unquote($unit);
+  @return math.div(utils.strip-unit($number), utils.strip-unit($base)) + string.unquote($unit);
 }

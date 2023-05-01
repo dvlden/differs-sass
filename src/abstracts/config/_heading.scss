@@ -1,4 +1,6 @@
-$dfr-config: deep-map-merge(
+@use 'sass:map';
+
+$dfr-config: map.deep-merge(
   (
     'heading': (
       'font': (
@@ -9,15 +11,14 @@ $dfr-config: deep-map-merge(
           ($dfr--base-fontSize + 14),
           ($dfr--base-fontSize + 8),
           ($dfr--base-fontSize + 4),
-          ($dfr--base-fontSize + 2)
+          ($dfr--base-fontSize + 2),
         )
       ),
       'line-height': ($dfr--base-lineHeight / 1.2),
       'margin': (
-        'bottom': $dfr--y-spacing
-      )
-    )
+        'bottom': $dfr--y-spacing,
+      ),
+    ),
   ),
   $dfr-config,
-  true
 );

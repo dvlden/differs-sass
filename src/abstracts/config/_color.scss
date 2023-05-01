@@ -1,13 +1,14 @@
-$dfr-config: deep-map-merge(
+@use 'sass:map';
+
+$dfr-config: map.deep-merge(
   (
     'color': (
       'dark':         $dfr--base-color-dark,
       'almost-dark':  lighten($dfr--base-color-dark, 15%),
       'medium':       mix($dfr--base-color-dark, $dfr--base-color-light, 51%),
       'almost-light': darken($dfr--base-color-light, 15%),
-      'light':        $dfr--base-color-light
+      'light':        $dfr--base-color-light,
     )
   ),
   $dfr-config,
-  true
 );

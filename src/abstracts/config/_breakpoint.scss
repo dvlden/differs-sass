@@ -1,4 +1,6 @@
-$dfr-config: deep-map-merge(
+@use 'sass:map';
+
+$dfr-config: map.deep-merge(
   (
     'breakpoint': (
       'xs': null,
@@ -9,5 +11,4 @@ $dfr-config: deep-map-merge(
     )
   ),
   $dfr-config,
-  true
 );

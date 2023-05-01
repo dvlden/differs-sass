@@ -1,6 +1,7 @@
-// stylelint-disable value-keyword-case
-// stylelint-disable function-comma-newline-after
-$dfr-config: deep-map-merge(
+@use 'sass:map';
+
+/* stylelint-disable */
+$dfr-config: map.deep-merge(
   (
     'font': (
       'family': (
@@ -10,7 +11,7 @@ $dfr-config: deep-map-merge(
         ),
         'mono': (
           Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace
-        )
+        ),
       ),
       'weight': normal,
       'path': '../fonts',
@@ -18,12 +19,10 @@ $dfr-config: deep-map-merge(
         'xs': $dfr--base-fontSize / 1.5,
         's':  $dfr--base-fontSize / 1.25,
         'l':  $dfr--base-fontSize * 1.25,
-        'xl': $dfr--base-fontSize * 1.5
-      )
+        'xl': $dfr--base-fontSize * 1.5,
+      ),
     )
   ),
   $dfr-config,
-  true
 );
-// stylelint-enable value-keyword-case
-// stylelint-enable function-comma-newline-after
+/* stylelint-enable */

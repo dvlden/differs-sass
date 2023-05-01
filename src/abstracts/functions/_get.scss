@@ -1,3 +1,6 @@
+@use 'sass:string';
+@use 'sass:map';
+
 // ---------------------------------------------------------
 // get
 // Search for any value contained within nested maps, by using
@@ -9,17 +12,14 @@
 // Example of use:
 // get('border.radius.xs')
 //
-// Dependencies:
-// deep-map-check, deep-map-get, str-explode
-//
 // @return Anything
 // ---------------------------------------------------------
 @function get ($key, $map: $dfr-config) {
-  $keys: str-explode($key, '.');
+  $keys: string.split($key, '.');
 
-  @if not deep-map-check($map, $keys...) {
-    @error 'The argument $map: `#{$map}` doesn\'t has some of the $keys: `#{$keys}`!';
+  @if not map.has-key($map, $keys...) {
+    @error 'The argument $map: `#{$map}` doesn\'t have some of the $keys: `#{$keys}`!';
   }
 
-  @return deep-map-get($map, $keys...);
+  @return map.get($map, $keys...);
 }

@@ -1,4 +1,6 @@
-$dfr-config: deep-map-merge(
+@use 'sass:map';
+
+$dfr-config: map.deep-merge(
   (
     'border': (
       'width': 2px,
@@ -10,10 +12,9 @@ $dfr-config: deep-map-merge(
         'm': $dfr--base-borderRadius,
         'l': $dfr--base-borderRadius * 1.25,
         'xl': $dfr--base-borderRadius * 2,
-        'f': 9999px
+        'f': 9999px,
       )
     )
   ),
   $dfr-config,
-  true
 );

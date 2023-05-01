@@ -1,12 +1,13 @@
-$dfr-config: deep-map-merge(
+@use 'sass:map';
+
+$dfr-config: map.deep-merge(
   (
     'container': (
       's':  510px,
       'm':  720px,
       'l':  940px,
-      'xl': 1140px
+      'xl': 1140px,
     )
   ),
   $dfr-config,
-  true
 );

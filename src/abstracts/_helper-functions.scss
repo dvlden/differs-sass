@@ -1,7 +1,7 @@
-@import 'functions/helpers/deep-map-check';
-@import 'functions/helpers/deep-map-get';
-@import 'functions/helpers/deep-map-merge';
-@import 'functions/helpers/str-capitalize';
-@import 'functions/helpers/str-explode';
-@import 'functions/helpers/strip-unit';
-@import 'functions/helpers/yiq';
+// @import 'functions/helpers/deep-map-check';
+// @import 'functions/helpers/deep-map-get';
+// @import 'functions/helpers/deep-map-merge';
+// @import 'functions/helpers/str-capitalize';
+// @import 'functions/helpers/str-explode';
+@forward 'functions/helpers/strip-unit';
+@forward 'functions/helpers/yiq';

@@ -1,21 +1,21 @@
 // Core
-@import 'abstracts/variables';
-@import 'abstracts/helper-functions';
-@import 'abstracts/config';
-@import 'abstracts/core-functions';
-@import 'abstracts/mixins';
-@import 'abstracts/helper-mixins';
+@forward 'abstracts/variables';
+@forward 'abstracts/helper-functions';
+@forward 'abstracts/config';
+@forward 'abstracts/core-functions';
+@forward 'abstracts/mixins';
+@forward 'abstracts/helper-mixins';
 
 // Base
-@import 'base/@reset';
-@import 'base/animations';
-@import 'base/container';
-@import 'base/grid';
-@import 'base/helpers';
-@import 'base/print';
-@import 'base/typography';
+@forward 'base/@reset';
+@forward 'base/animations';
+@forward 'base/container';
+@forward 'base/grid';
+@forward 'base/helpers';
+@forward 'base/print';
+@forward 'base/typography';
 
 // Components
-@import 'components/action';
-@import 'components/button';
-@import 'components/input';
+@forward 'components/action';
+@forward 'components/button';
+@forward 'components/input';
