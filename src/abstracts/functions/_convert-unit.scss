@@ -1,5 +1,6 @@
 @use 'sass:math';
 @use 'sass:string';
+@use 'sass:meta';
 @use '../helper-functions' as utils;
 
 // ---------------------------------------------------------
@@ -18,10 +19,10 @@
 // @return List
 // ---------------------------------------------------------
 @function convert-unit ($number, $unit, $base: $dfr--base-fontSize) {
-  @if type-of($number) != 'number' {
+  @if meta.type-of($number) != 'number' {
     @error 'The argument $number: `#{$number}` is of incorrect type: `#{type-of($number)}`. Type of `Number` is required!';
   }
-  @else if math.is-unitless($number) != 'px' {
+  @else if math.unit($number) != 'px' {
     @error 'The argument $number: `#{$number}` has incorrect unit: `#{unit($number)}`. Unit of `px` is required!';
   }
   @else if $unit != 'em' and $unit != 'rem' {
